@@ -530,7 +530,8 @@
     $body.append(remodal.$wrapper);
 
     // Add the event listener for the close button
-    remodal.$wrapper.on('click.' + NAMESPACE, '[data-' + PLUGIN_NAME + '-action="close"]', function(e) {
+    // ADDED FIX FOR TOUCHSTART EVENT
+    remodal.$wrapper.on('click.' + NAMESPACE + ', touchstart.'+ NAMESPACE, '[data-' + PLUGIN_NAME + '-action="close"]', function(e) {
       e.preventDefault();
 
       remodal.close();
